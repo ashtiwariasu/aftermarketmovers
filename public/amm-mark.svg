@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">AMM orange triangle</title>
+  <g transform="rotate(12 256 256)">
+    <path d="M256 64 447 414 65 414Z" fill="#FF4D1F"/>
+  </g>
+</svg>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+{{FONTS}}
+<style>
+  *{box-sizing:border-box}
+  html,body{width:1080px;height:1920px;margin:0;overflow:hidden;background:transparent}
+  body{color:#16150f}
+  .header{position:absolute;inset:0 0 auto 0;height:116px;background:#f4f1ea;
+    border-bottom:4px solid #16150f;display:flex;align-items:center;
+    justify-content:space-between;padding:0 52px}
+  .brand{font:800 43px/1 "Bricolage Grotesque",sans-serif}
+  .tri{display:inline-block;width:0;height:0;border-left:12px solid transparent;
+    border-right:12px solid transparent;border-bottom:23px solid #ff4d1f;
+    transform:rotate(12deg);margin-left:7px}
+  .meta{font:700 18px/1 "IBM Plex Mono",monospace;letter-spacing:.14em;color:#6d6a62}
+  .presenter-frame{position:absolute;left:38px;right:38px;top:116px;height:700px;
+    border-left:4px solid #16150f;border-right:4px solid #16150f}
+  .presenter-tag{position:absolute;left:70px;top:760px;background:#16150f;color:#f4f1ea;
+    border-radius:7px;padding:12px 18px;font:700 15px/1 "IBM Plex Mono",monospace;
+    letter-spacing:.12em}
+  .panel{position:absolute;left:38px;right:38px;top:816px;bottom:34px;
+    background:#fffdf8;border:4px solid #16150f;border-left:16px solid {{ACCENT}};
+    box-shadow:10px 10px 0 #16150f;padding:42px 46px 34px}
+  .scene{font:700 17px/1 "IBM Plex Mono",monospace;letter-spacing:.17em;color:#ff4d1f}
+  .eyebrow{margin-top:18px;font:700 18px/1.25 "IBM Plex Mono",monospace;
+    letter-spacing:.13em;color:#6d6a62}
+  h1{font:800 {{HEADLINE_SIZE}}px/.93 "Bricolage Grotesque",sans-serif;
+    letter-spacing:-.045em;margin:20px 0 0;color:{{HEADLINE_COLOR}}}
+  .body{font:700 30px/1.17 "Bricolage Grotesque",sans-serif;margin-top:26px;
+    max-width:900px;color:#16150f}
+  .graphic{margin-top:30px}
+  .footer{position:absolute;left:46px;right:46px;bottom:34px;border-top:2px solid #aaa69c;
+    padding-top:18px;font:700 16px/1.35 "IBM Plex Mono",monospace;
+    letter-spacing:.11em;color:#6d6a62}
+  .numbers{display:grid;grid-template-columns:repeat({{NUMBER_COLUMNS}},1fr);gap:14px}
+  .number{border:3px solid #16150f;border-bottom:9px solid #ff4d1f;border-radius:10px;
+    padding:22px 18px;background:#fffdf8}
+  .number b{display:block;font:800 44px/.95 "Bricolage Grotesque",sans-serif;color:#2b4bf2}
+  .number span{display:block;margin-top:11px;font:700 13px/1.25 "IBM Plex Mono",monospace;
+    letter-spacing:.09em;color:#6d6a62}
+  .evidence-chart{display:grid;gap:22px;margin-top:6px}
+  .metric-top{display:flex;align-items:flex-end;justify-content:space-between;gap:22px}
+  .metric-top span{font:700 16px/1.1 "IBM Plex Mono",monospace;letter-spacing:.11em;
+    color:#6d6a62}
+  .metric-top b{font:800 48px/.9 "Bricolage Grotesque",sans-serif;color:#2b4bf2}
+  .metric-track{height:22px;background:#ddd9cf;border:2px solid #16150f;margin-top:10px}
+  .metric-track i{display:block;height:100%;background:#ff4d1f;border-right:3px solid #16150f}
+  .ratio-badge{justify-self:start;background:#16150f;color:#d5fb50;border-radius:8px;
+    padding:13px 18px;font:700 17px/1 "IBM Plex Mono",monospace;letter-spacing:.08em}
+  .vote-row{display:flex;align-items:center;gap:14px;margin-top:26px}
+  .vote-row svg{width:82px;height:76px}
+  .vote-copy{margin-left:12px;font:800 38px/1 "Bricolage Grotesque",sans-serif}
+  .cta{height:100%;display:flex;flex-direction:column;justify-content:center;
+    padding-bottom:36px}
+  .cta .url{display:inline-block;margin-top:38px;background:#ff4d1f;color:white;
+    border:4px solid #16150f;box-shadow:9px 9px 0 #16150f;border-radius:12px;
+    padding:30px 28px;text-align:center;font:800 36px/1 "Bricolage Grotesque",sans-serif}
+  .cta .promise{font:700 20px/1.35 "IBM Plex Mono",monospace;letter-spacing:.09em;
+    color:#2b4bf2;margin-top:28px;text-align:center}
+</style>
+</head>
+<body>
+  <div class="header">
+    <div class="brand">AMM<span class="tri"></span></div>
+    <div class="meta">{{TICKER}} · {{DATE}}</div>
+  </div>
+  <div class="presenter-frame"></div>
+  <div class="presenter-tag">ASH · AMM</div>
+  <section class="panel">
+    <div class="scene">{{SCENE}}</div>
+    <div class="eyebrow">{{EYEBROW}}</div>
+    <h1>{{HEADLINE}}</h1>
+    <div class="body">{{BODY}}</div>
+    <div class="graphic">{{GRAPHIC}}</div>
+    <div class="footer">{{FOOTER}}</div>
+  </section>
+</body>
+</html>

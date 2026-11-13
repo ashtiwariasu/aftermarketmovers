@@ -1,0 +1,32 @@
+{
+  "ticker": "META",
+  "dateChip": "JULY 22, 2026",
+  "move": "−2.6%",
+  "direction": "down",
+  "hookClaim": "THE FILINGS JUST<br>ANSWERED THE $420B RUMOR",
+  "read": "GENTLE<br>UPSIDE",
+  "horizon": "EXPECTED IMPACT · 2–3 WEEKS",
+  "railAsset": "assets/rail-gentle-upside.png",
+  "votesFor": 3,
+  "votesTotal": 5,
+  "dissentLine": "2 NOT CONVINCED — WANT THE<br>JUL 29 EARNINGS FIRST",
+  "voice": "7d67e148d0ca42c8b9577ac6d0de75d0",
+  "script": {
+    "hook": "Meta, down two and a half percent - and a four hundred twenty billion dollar rumor is doing the rounds.",
+    "hookCard": "July twenty-second. Here's our read.",
+    "meter": "Gentle upside - that's four on our five-point scale - and we expect it to play out inside two to three weeks.",
+    "story": "Here's the story. The rumor says Meta is hiding four hundred twenty billion in AI debts. Meta's own filings answer it: thirty-two billion of cash came in last quarter - it covered all nineteen billion of AI spending, with thirteen billion to spare. And the filed debt? Fifty-nine billion. Not four-twenty.",
+    "vote": "Three of our five analysts back the read. Two are not convinced - the proof is last quarter's filing, and they want the July twenty-ninth earnings before they trust it.",
+    "close": "The full analysis is free at aftermarketmovers dot com."
+  },
+  "captions": {
+    "hook": "META, DOWN 2.6% — AND A\n$420B RUMOR DOES THE ROUNDS",
+    "story": [
+      "THE RUMOR: META HIDES\n$420B IN AI DEBTS",
+      "THE FILINGS: $32B CASH IN —\nCOVERED ALL $19B OF AI SPEND",
+      "$13B TO SPARE",
+      "FILED DEBT: $59B — NOT $420B"
+    ],
+    "storyWords": [10, 16, 5, 9]
+  }
+}

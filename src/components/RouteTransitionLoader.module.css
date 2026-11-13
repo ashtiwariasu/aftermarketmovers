@@ -1,0 +1,125 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: grid;
+  place-items: center;
+  background: rgb(244 241 234 / 74%);
+  backdrop-filter: blur(2.5px);
+  animation: veil-in 140ms ease-out both;
+  cursor: progress;
+}
+
+.card {
+  width: 146px;
+  min-height: 126px;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 16px;
+  padding: 22px 22px 18px;
+  border: 2px solid var(--pr-ink, #17160f);
+  border-radius: 18px;
+  color: var(--pr-paper, #f4f1ea);
+  background: var(--pr-ink, #17160f);
+  box-shadow: 8px 8px 0 var(--pr-orange, #ff4d1f);
+  animation: card-in 190ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
+}
+
+.mark {
+  width: 54px;
+  height: 50px;
+  overflow: visible;
+  transform: rotate(12deg);
+  transform-origin: center;
+  animation: mark-breathe 1.45s ease-in-out infinite;
+}
+
+.markFill {
+  fill: var(--pr-orange, #ff4d1f);
+  opacity: 0.2;
+}
+
+.markEdge {
+  fill: none;
+  stroke: var(--pr-orange, #ff4d1f);
+  stroke-width: 4;
+  stroke-linejoin: round;
+}
+
+.markTrace {
+  fill: none;
+  stroke: var(--pr-paper, #f4f1ea);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 0.18 0.82;
+  animation: perimeter-trace 1.45s linear infinite;
+}
+
+.card p {
+  margin: 0;
+  color: var(--pr-lime, #d7ff47);
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+}
+
+@keyframes perimeter-trace {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes mark-breathe {
+  0%,
+  100% {
+    opacity: 0.78;
+    transform: rotate(12deg) scale(0.96);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(12deg) scale(1);
+  }
+}
+
+@keyframes veil-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(5px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay,
+  .card,
+  .mark,
+  .markTrace {
+    animation: none;
+  }
+
+  .markFill {
+    opacity: 1;
+  }
+
+  .markTrace {
+    display: none;
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "ticker": "AMD",
+  "dateChip": "JULY 23, 2026",
+  "move": "+8.1%",
+  "direction": "up",
+  "hookClaim": "THE WEEK THAT<br>DECIDES IF IT HOLDS",
+  "read": "GENTLE<br>UPSIDE",
+  "horizon": "EXPECTED IMPACT · 2–3 WEEKS",
+  "railAsset": "assets/rail-gentle-upside.png",
+  "votesFor": 3,
+  "votesTotal": 5,
+  "dissentLine": "2 UNCERTAIN — WANT A<br>CONFIRMED CUSTOMER",
+  "voice": "7d67e148d0ca42c8b9577ac6d0de75d0",
+  "script": {
+    "hook": "AMD, up eight percent - and this week decides if it holds.",
+    "hookCard": "July twenty-third. Here's our read.",
+    "meter": "Gentle upside - that's four on our five-point scale - and we expect it to play out inside two to three weeks.",
+    "story": "Here's the story. AMD just launched Helios, its new AI server rack - and Microsoft's Azure is first in line. The stock jumped eight percent. Now comes the test: this week's AMD event needs a real customer, with real numbers, on stage.",
+    "vote": "Three of our five analysts back the read. Two are holding out - they want a confirmed customer first. Until then, this could just be the sector moving, not AMD.",
+    "close": "The full analysis is free at aftermarketmovers dot com."
+  },
+  "captions": {
+    "hook": "AMD, UP 8% — AND THIS WEEK\nDECIDES IF IT HOLDS",
+    "story": [
+      "AMD JUST LAUNCHED HELIOS —\nITS NEW AI SERVER RACK",
+      "MICROSOFT'S AZURE\nIS FIRST IN LINE",
+      "THE STOCK JUMPED 8%",
+      "THIS WEEK'S EVENT NEEDS A REAL\nCUSTOMER — WITH REAL NUMBERS"
+    ],
+    "storyWords": [13, 6, 5, 17]
+  }
+}

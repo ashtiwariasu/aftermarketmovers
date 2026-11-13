@@ -1,0 +1,12 @@
+node_modules
+.next
+.git
+.env*
+*.md
+*.mp4
+*.mov
+tools/shorts/out
+tools/shorts/daily-artifacts
+tools/shorts/**/__pycache__
+.dockerignore
+Dockerfile

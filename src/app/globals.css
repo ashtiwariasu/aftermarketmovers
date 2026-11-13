@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  /* The five inks — from the AMM logo sheet ("The Gap" · Tape Pink) */
+  --k00: #0e0508; /* pink-black field */
+  --k10: #1c0a12; /* card */
+  --k20: #3a1224; /* border */
+  --k30: #4a1b33; /* unlit tube */
+  --dim: #5c2240;
+  --lo: #c4638f;  /* low-emphasis text */
+  --pink: #ff2e88; /* tape pink — spent only where something is ON */
+  --core: #ffd1e6; /* hot core */
+  --hi: #ffdcea;   /* high-emphasis text */
+  --paper: #fff0f6;
+  --inkp: #3a0f22;
+  --up: #2fe6a8;
+  --down: #ff5f6d;
+  --glow: 0 0 18px rgba(255, 46, 136, 0.38);
+
+  --background: var(--k00);
+  --foreground: var(--hi);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-instrument);
+  --font-mono: var(--font-plex-mono);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--k00);
+  color: var(--hi);
+  font-family: var(--font-instrument), system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Display type — Archivo, expanded */
+.font-disp {
+  font-family: var(--font-archivo), system-ui, sans-serif;
+  font-variation-settings: "wdth" 112;
+  letter-spacing: -0.02em;
+}
+.font-disp-wide {
+  font-family: var(--font-archivo), system-ui, sans-serif;
+  font-variation-settings: "wdth" 120;
+  letter-spacing: -0.03em;
+}
+
+/* Numbers are always tabular */
+.nums { font-variant-numeric: tabular-nums; }
+
+/* The lamp — the only thing that breathes */
+.lamp { animation: breathe 2.4s ease-in-out infinite; }
+@keyframes breathe {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* The Tape — slow, continuous, honest motion */
+.tape-track {
+  display: flex;
+  width: max-content;
+  animation: tape 55s linear infinite;
+}
+.tape-track:hover { animation-play-state: paused; }
+@keyframes tape {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lamp, .tape-track { animation: none !important; }
+}
+
+::selection { background: var(--pink); color: var(--k00); }
+
+/* ---- Paper Round (site-wide skin) ---- */
+:root {
+  --pr-ink: #16150f;
+  --pr-paper: #f4f1ea;
+  --pr-card: #fffdf8;
+  --pr-blue: #2b4bf2;
+  --pr-orange: #ff4d1f;
+  --pr-lime: #d9f45b;
+  --pr-sand: #ede9df;
+  --pr-dim: rgba(22, 21, 15, 0.7);
+  --pr-faint: rgba(22, 21, 15, 0.5);
+  --pr-up: #0b7a50;
+  --pr-down: #b3273d;
+}
+.pp {
+  background: var(--pr-paper);
+  color: var(--pr-ink);
+  font-family: var(--font-space), system-ui, sans-serif;
+}
+.pp-disp {
+  font-family: var(--font-bricolage), system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+.pp-mono { font-family: var(--font-plex-mono), monospace; font-variant-numeric: tabular-nums; }
+.pp-card {
+  background: var(--pr-card);
+  border: 2px solid var(--pr-ink);
+  border-radius: 14px;
+}
+.pp-shadow { box-shadow: 6px 6px 0 var(--pr-ink); }
+.pp-shadow-sm { box-shadow: 3px 3px 0 var(--pr-ink); }
+.pp-btn {
+  font-family: var(--font-bricolage), sans-serif;
+  font-weight: 700;
+  border-radius: 8px;
+  display: inline-block;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.pp-btn-orange { background: var(--pr-orange); color: var(--pr-paper); box-shadow: 4px 4px 0 var(--pr-ink); }
+.pp-btn-blue { background: var(--pr-blue); color: var(--pr-paper); box-shadow: 3px 3px 0 var(--pr-ink); }
+.pp-btn-ghost { border: 2px solid var(--pr-ink); color: var(--pr-ink); }
+.pp-btn-orange:hover, .pp-btn-blue:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--pr-ink); }
+.pp-chip {
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  background: var(--pr-ink);
+  color: var(--pr-paper);
+  padding: 5px 12px;
+  border-radius: 6px;
+  display: inline-block;
+}

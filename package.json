@@ -1,0 +1,46 @@
+{
+  "name": "aftermarketmovers",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "test": "tsx --test tests/**/*.test.ts",
+    "release:base": "bash scripts/check-release-base.sh",
+    "release:migration": "tsx scripts/check-private-signal-schema.ts && tsx scripts/backfill-v5-dossiers.ts --verify",
+    "release:models": "tsx scripts/smoke-signal-models.ts",
+    "release:verify": "npm test && npx tsc --noEmit --incremental false && npm run lint && npm run build && npm run release:migration && npm run release:base",
+    "fleet:reconcile": "tsx scripts/reconcile-company-fleet.ts",
+    "news:source": "tsx scripts/register-news-source.ts",
+    "news:smoke": "tsx scripts/smoke-news-pipeline.ts",
+    "resend:lifecycle": "tsx scripts/configure-resend-lifecycle.ts"
+  },
+  "dependencies": {
+    "@clerk/nextjs": "^7.5.17",
+    "@google-cloud/firestore": "^8.6.0",
+    "@next/third-parties": "^16.2.10",
+    "fast-xml-parser": "^5.10.1",
+    "next": "16.2.10",
+    "posthog-js": "^1.404.1",
+    "posthog-node": "^5.45.2",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "resend": "^6.17.2",
+    "stripe": "^22.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.10",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.1",
+    "typescript": "^5"
+  }
+}

@@ -1,0 +1,25 @@
+FROM node:20-bookworm-slim
+
+ENV NODE_ENV=production \
+    CHROME_BIN=/usr/bin/chromium \
+    NEXT_TELEMETRY_DISABLED=1
+
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends \
+    ca-certificates \
+    chromium \
+    curl \
+    ffmpeg \
+    fonts-liberation \
+    fonts-noto-color-emoji \
+    fonts-noto-core \
+    python3 \
+  && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci --include=dev
+COPY . .
+
+ENTRYPOINT ["npx", "tsx", "tools/shorts/run-daily-pipeline.ts"]
+CMD ["--publish"]
